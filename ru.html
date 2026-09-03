@@ -67,7 +67,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:10px 6
 .note{font-size:13px;color:var(--mut);margin-top:6px}.note.fine{font-size:12px;text-align:center;margin:0}
 footer{padding:30px 6%;text-align:center;color:#8a7362;font-size:14px}footer bdi{white-space:nowrap}
 .fab{position:fixed;bottom:22px;inset-inline-start:22px;width:60px;height:60px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;font-size:30px;box-shadow:0 10px 25px #0004;text-decoration:none}
-@media(max-width:800px){.grid{grid-template-columns:repeat(3,1fr);gap:8px}.card .ph{height:80px;font-size:34px}.card .b{padding:8px}.card h3{font-size:14px}.card p{font-size:11px}.price{font-size:13px}.price small{display:block}
+@media(max-width:800px){.btns{display:flex;gap:10px}.btns .btn{flex:1;text-align:center;margin:0;padding:12px 10px;font-size:15px;white-space:nowrap}.dishes{grid-template-columns:1fr}.dishes label{font-size:15px}.grid{grid-template-columns:repeat(3,1fr);gap:8px}.card .ph{height:80px;font-size:34px}.card .b{padding:8px}.card h3{font-size:14px}.card p{font-size:11px}.price{font-size:13px}.price small{display:block}
 .arr{display:block}.reviews .grid{display:grid;grid-template-columns:none;grid-auto-flow:column;justify-content:start;scroll-behavior:smooth;grid-auto-columns:calc((100% - 16px)/3);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;scrollbar-width:none}.rev{max-width:none;min-width:0;scroll-snap-align:start;padding:10px;font-size:11px}.rev p,.rev b,.rev .stars{font-size:11px}.rev .stars{letter-spacing:0}
 .brand small{display:none}.brand img{width:44px;height:44px}.hero,.order,.intro{grid-template-columns:1fr}.hero h1{font-size:38px}.order{padding:30px}}
 </style></head><body>
@@ -77,8 +77,8 @@ footer{padding:30px 6%;text-align:center;color:#8a7362;font-size:14px}footer bdi
 <section class="hero"><div>
 <h1 data-he="פלמני ביתיים,<br>כמו שסבתא הכינה" data-ru="Домашние пельмени,<br>как у бабушки">Домашние пельмени,<br>как у бабушки</h1>
 <p class="lead" data-he="כיסונים בעבודת יד, מבצק דק ומילוי נדיב. מגיעים אליכם קפואים – עשר דקות במים רותחים וארוחה חמה על השולחן." data-ru="Пельмени ручной лепки — тонкое тесто, щедрая начинка. Приезжают замороженными: десять минут в кипятке — и горячий ужин на столе.">Пельмени ручной лепки — тонкое тесто, щедрая начинка. Приезжают замороженными: десять минут в кипятке — и горячий ужин на столе.</p>
-<a class="btn" href="#order"><svg class="i"><use href="#i-wa"/></svg><span data-he="להזמין עכשיו" data-ru="Заказать сейчас">Заказать сейчас</span></a>
-<a class="btn call" href="#tel"><svg class="i"><use href="#i-tel"/></svg><span data-he="להתקשר" data-ru="Позвонить">Позвонить</span></a>
+<div class="btns"><a class="btn" href="#order"><svg class="i"><use href="#i-wa"/></svg><span data-he="להזמין עכשיו" data-ru="Заказать сейчас">Заказать сейчас</span></a>
+<a class="btn call" href="#tel"><svg class="i"><use href="#i-tel"/></svg><span data-he="להתקשר" data-ru="Позвонить">Позвонить</span></a></div>
 </div><img class="img" src="img/logo.png" alt="המטבח של אולגה – אוכל ביתי מכל הלב"></section>
 
 <section class="intro"><div class="face"><img src="img/olga.jpg" alt="אולגה סוגרת פלמני ביד במטבח" loading="lazy"></div><div>
@@ -117,7 +117,7 @@ const PHONE='972526981834'; // ponytail: single place for mom's number, intl for
 document.querySelectorAll('a[href="#wa"]').forEach(a=>a.href='https://wa.me/'+PHONE);document.querySelectorAll('a[href="#tel"]').forEach(a=>a.href='tel:+'+PHONE);
 let ru=true;function toggle(){ru=!ru;document.documentElement.lang=ru?'ru':'he';document.documentElement.dir=ru?'ltr':'rtl';document.querySelector('.lang use').setAttribute('href',ru?'#f-il':'#f-ru');document.querySelectorAll('[data-he]').forEach(e=>e.innerHTML=e.dataset[ru?'ru':'he'])}
 const d=new Date();d.setDate(d.getDate()+2);document.querySelector('[name=date]').min=d.toISOString().slice(0,10); // earliest pickup: day after tomorrow
-function slide(d){const g=document.querySelector('.reviews .grid');g.scrollBy({left:d*(g.clientWidth/3+8)})}
+function slide(d){const g=document.querySelector('.reviews .grid');g.scrollBy({left:(ru?d:-d)*(g.clientWidth/3+8)})}
 document.querySelectorAll('form [required]').forEach(i=>{i.oninvalid=()=>i.setCustomValidity(ru?'Заполните это поле':'נא למלא שדה זה');i.oninput=()=>i.setCustomValidity('')});
 function send(e){e.preventDefault();const f=e.target;const items=[...f.querySelectorAll('.dishes label')].filter(l=>+l.querySelector('input').value>0).map(l=>`${l.querySelector('input').value} ${ru?'кг':'ק"ג'} ${l.querySelector('span').textContent}`);if(!items.length){alert(ru?'Выберите хотя бы одно блюдо':'בחרו לפחות סוג אחד');return}const dt=f.date.value.split('-').reverse().join('-');const t=ru?`Здравствуйте, Ольга!\nЯ хочу заказать:\n${items.join('\n')}\nна ${dt},\nспасибо, ${f.name.value}!`:`שלום אולגה!\nאני רוצה להזמין:\n${items.join('\n')}\nלתאריך ${dt},\nתודה, ${f.name.value}!`;open('https://wa.me/'+PHONE+'?text='+encodeURIComponent(t))}
 </script></body></html>

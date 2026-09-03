@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://blueskaic.github.io/Olga-s-Kitchen/sitemap.xml

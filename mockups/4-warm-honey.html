@@ -1,0 +1,79 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>המטבח של אולגה</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&family=Frank+Ruhl+Libre:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fdf7ee;--bg2:#f6e8d2;--ink:#3b2a1e;--mut:#7a6455;--acc:#c2542d;--honey:#e9a83a;--wa:#25d366}
+*{box-sizing:border-box}body{margin:0;font-family:Heebo,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+h1,h2,h3{font-family:"Frank Ruhl Libre",serif;margin:0}
+nav{display:flex;justify-content:space-between;align-items:center;padding:16px 6%;position:sticky;top:0;background:var(--bg);z-index:2}
+.logo{font-family:"Frank Ruhl Libre",serif;font-size:26px;font-weight:900;color:var(--acc)}
+.lang{border:1.5px solid var(--ink);background:none;padding:6px 14px;border-radius:99px;font:inherit;cursor:pointer}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;padding:50px 6% 30px}
+.hero h1{font-size:54px;line-height:1.1;margin-bottom:14px}.hero .lead{font-size:20px;color:var(--mut);margin:0 0 26px}
+.btn{display:inline-block;padding:14px 26px;border-radius:99px;font-weight:700;text-decoration:none;color:#fff;background:var(--wa);margin-inline-end:10px;border:none;font:inherit;font-weight:700;cursor:pointer}
+.btn.call{background:var(--acc)}
+.img{aspect-ratio:1;border-radius:50% 50% 50% 8px;background:radial-gradient(circle at 40% 40%,#f7dfae,#c2542d);display:grid;place-items:center;font-size:150px;box-shadow:0 30px 60px -30px #0006;border:8px solid #fff}
+.intro{margin:30px 6% 0;background:#fff;border-radius:24px;padding:36px 40px;display:grid;grid-template-columns:120px 1fr;gap:30px;align-items:center;box-shadow:0 14px 40px -24px #0005}
+.intro .face{width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--honey),var(--acc));display:grid;place-items:center;font-size:60px}
+.intro h2{font-size:30px;margin-bottom:8px}.intro p{margin:0;font-size:17px;color:var(--mut)}
+.intro .tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}.intro .tags span{background:var(--bg2);padding:5px 12px;border-radius:99px;font-size:14px;font-weight:500}
+.menu{padding:60px 6% 40px}.menu h2{font-size:40px;text-align:center;margin-bottom:6px}.menu .sub{text-align:center;color:var(--mut);margin:0 0 30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 10px 30px -18px #0005}
+.card .ph{height:140px;display:grid;place-items:center;font-size:60px;background:linear-gradient(135deg,#fde7c8,#f4c48a)}
+.card .b{padding:16px}.card h3{font-size:20px;margin-bottom:4px}.card p{margin:0;color:var(--mut);font-size:14px}
+.price{color:var(--acc);font-weight:700;margin-top:8px;display:block}
+.order{margin:40px 6% 60px;background:var(--bg2);border-radius:28px;padding:50px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.order h2{font-size:38px;margin-bottom:8px}.order p{color:var(--mut);margin:0 0 20px;font-size:17px}
+.order form{display:grid;gap:12px}
+.order label{font-weight:500;font-size:14px}
+.order select,.order input{width:100%;padding:12px 14px;border-radius:12px;border:1.5px solid #e0cfb5;background:#fff;font:inherit;margin-top:4px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.note{font-size:13px;color:var(--mut);margin-top:6px}
+footer{padding:30px 6%;text-align:center;color:#8a7362;font-size:14px}
+.fab{position:fixed;bottom:22px;inset-inline-start:22px;width:60px;height:60px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;font-size:30px;box-shadow:0 10px 25px #0004;text-decoration:none}
+@media(max-width:800px){.hero,.order,.intro{grid-template-columns:1fr}.hero h1{font-size:38px}.order{padding:30px}}
+</style></head><body>
+<nav><div class="logo" data-he="המטבח של אולגה" data-ru="Кухня Ольги">המטבח של אולגה</div><button class="lang" onclick="toggle()">RU</button></nav>
+
+<section class="hero"><div>
+<h1 data-he="פלמני ביתיים,<br>כמו שסבתא הכינה" data-ru="Домашние пельмени,<br>как у бабушки">פלמני ביתיים,<br>כמו שסבתא הכינה</h1>
+<p class="lead" data-he="כיסונים בעבודת יד, מבצק דק ומילוי נדיב. מגיעים אליכם קפואים – עשר דקות במים רותחים וארוחה חמה על השולחן." data-ru="Пельмени ручной лепки — тонкое тесто, щедрая начинка. Приезжают замороженными: десять минут в кипятке — и горячий ужин на столе.">כיסונים בעבודת יד, מבצק דק ומילוי נדיב. מגיעים אליכם קפואים – עשר דקות במים רותחים וארוחה חמה על השולחן.</p>
+<a class="btn" href="#order" data-he="💬 להזמין עכשיו" data-ru="💬 Заказать сейчас">💬 להזמין עכשיו</a>
+<a class="btn call" href="tel:+972500000000" data-he="📞 להתקשר" data-ru="📞 Позвонить">📞 להתקשר</a>
+</div><div class="img">🥟</div></section>
+
+<section class="intro"><div class="face">👩‍🍳</div><div>
+<h2 data-he="שלום, אני אולגה" data-ru="Здравствуйте, я Ольга">שלום, אני אולגה</h2>
+<p data-he="גדלתי במטבח שבו כל יום ראשון כל המשפחה ישבה סביב השולחן וסגרה פלמני ביד. את המתכון של סבתא שלי אני מכינה כבר יותר מ־20 שנה – אותו בצק, אותו מילוי, אותה סבלנות. בלי חומרים משמרים, בלי מכונות. כשאתם מזמינים אצלי, אתם מקבלים בדיוק את מה שאני מגישה לילדים שלי." data-ru="Я выросла на кухне, где каждое воскресенье вся семья садилась за стол и лепила пельмени руками. По рецепту моей бабушки я готовлю уже больше 20 лет — то же тесто, та же начинка, то же терпение. Без консервантов, без машин. Заказывая у меня, вы получаете ровно то, что я подаю своим детям.">גדלתי במטבח שבו כל יום ראשון כל המשפחה ישבה סביב השולחן וסגרה פלמני ביד. את המתכון של סבתא שלי אני מכינה כבר יותר מ־20 שנה – אותו בצק, אותו מילוי, אותה סבלנות. בלי חומרים משמרים, בלי מכונות. כשאתם מזמינים אצלי, אתם מקבלים בדיוק את מה שאני מגישה לילדים שלי.</p>
+<div class="tags"><span data-he="✋ נסגר ביד" data-ru="✋ Ручная лепка">✋ נסגר ביד</span><span data-he="🌿 בלי חומרים משמרים" data-ru="🌿 Без консервантов">🌿 בלי חומרים משמרים</span><span data-he="❄️ טרי, מוקפא באותו יום" data-ru="❄️ Заморожено в день лепки">❄️ טרי, מוקפא באותו יום</span><span data-he="🚚 משלוח עד הבית" data-ru="🚚 Доставка до двери">🚚 משלוח עד הבית</span></div>
+</div></section>
+
+<section class="menu"><h2 data-he="מה יש היום בסיר" data-ru="Что сегодня в кастрюле">מה יש היום בסיר</h2><p class="sub" data-he="המחירים לק״ג · כ־60 כיסונים בק״ג" data-ru="Цены за кг · около 60 штук в кг">המחירים לק"ג · כ־60 כיסונים בק"ג</p><div class="grid">
+<div class="card"><div class="ph">🥟</div><div class="b"><h3 data-he="פלמני בשר" data-ru="Пельмени с мясом">פלמני בשר</h3><p data-he="בקר וחזיר, הקלאסי של סבתא" data-ru="Говядина и свинина, бабушкина классика">בקר וחזיר, הקלאסי של סבתא</p><span class="price">₪45</span></div></div>
+<div class="card"><div class="ph">🐔</div><div class="b"><h3 data-he="פלמני עוף" data-ru="Пельмени с курицей">פלמני עוף</h3><p data-he="קל, עסיסי, הילדים מבקשים עוד" data-ru="Лёгкие, сочные, дети просят добавки">קל, עסיסי, הילדים מבקשים עוד</p><span class="price">₪42</span></div></div>
+<div class="card"><div class="ph">🥔</div><div class="b"><h3 data-he="ורניקי תפוחי אדמה" data-ru="Вареники с картошкой">ורניקי תפוחי אדמה</h3><p data-he="עם בצל מטוגן ושמיר" data-ru="С жареным луком и укропом">עם בצל מטוגן ושמיר</p><span class="price">₪40</span></div></div>
+<div class="card"><div class="ph">🧀</div><div class="b"><h3 data-he="ורניקי גבינה" data-ru="Вареники с творогом">ורניקי גבינה</h3><p data-he="מתוקים או מלוחים, לבחירתכם" data-ru="Сладкие или солёные — на выбор">מתוקים או מלוחים, לבחירתכם</p><span class="price">₪40</span></div></div>
+<div class="card"><div class="ph">🍄</div><div class="b"><h3 data-he="ורניקי פטריות וכרוב" data-ru="Вареники с грибами и капустой">ורניקי פטריות וכרוב</h3><p data-he="טבעוני, מלא טעם" data-ru="Веганские, очень ароматные">טבעוני, מלא טעם</p><span class="price">₪42</span></div></div>
+<div class="card"><div class="ph">🍒</div><div class="b"><h3 data-he="ורניקי דובדבנים" data-ru="Вареники с вишней">ורניקי דובדבנים</h3><p data-he="קינוח של פעם, עם שמנת חמוצה" data-ru="Десерт из детства, со сметаной">קינוח של פעם, עם שמנת חמוצה</p><span class="price">₪44</span></div></div>
+</div></section>
+
+<section class="order" id="order"><div>
+<h2 data-he="מזמינים? זה לוקח דקה" data-ru="Заказать? Это одна минута">מזמינים? זה לוקח דקה</h2>
+<p data-he="ממלאים מה רוצים, לוחצים – וההזמנה נפתחת בוואטסאפ עם כל הפרטים. אני מאשרת תוך כמה שעות ומתאמת איתכם משלוח או איסוף." data-ru="Выберите что хотите, нажмите — заказ откроется в WhatsApp со всеми деталями. Подтверждаю в течение нескольких часов и договариваемся о доставке или самовывозе.">ממלאים מה רוצים, לוחצים – וההזמנה נפתחת בוואטסאפ עם כל הפרטים. אני מאשרת תוך כמה שעות ומתאמת איתכם משלוח או איסוף.</p>
+<p class="note" data-he="מומלץ להזמין יומיים מראש · מינימום הזמנה 1 ק״ג · משלוחים באזור המרכז" data-ru="Лучше заказывать за два дня · Минимум 1 кг · Доставка по центру">מומלץ להזמין יומיים מראש · מינימום הזמנה 1 ק"ג · משלוחים באזור המרכז</p>
+</div>
+<form onsubmit="send(event)">
+<label><span data-he="מה להכין?" data-ru="Что приготовить?">מה להכין?</span><select name="dish">
+<option data-he="פלמני בשר" data-ru="Пельмени с мясом">פלמני בשר</option><option data-he="פלמני עוף" data-ru="Пельмени с курицей">פלמני עוף</option><option data-he="ורניקי תפוחי אדמה" data-ru="Вареники с картошкой">ורניקי תפוחי אדמה</option><option data-he="ורניקי גבינה" data-ru="Вареники с творогом">ורניקי גבינה</option><option data-he="ורניקי פטריות וכרוב" data-ru="Вареники с грибами">ורניקי פטריות וכרוב</option><option data-he="ורניקי דובדבנים" data-ru="Вареники с вишней">ורניקי דובדבנים</option></select></label>
+<div class="two"><label><span data-he="כמות (ק״ג)" data-ru="Количество (кг)">כמות (ק"ג)</span><input name="qty" type="number" min="1" value="2"></label>
+<label><span data-he="לאיזה תאריך?" data-ru="На какую дату?">לאיזה תאריך?</span><input name="date" type="date"></label></div>
+<label><span data-he="השם שלכם" data-ru="Ваше имя">השם שלכם</span><input name="name" required></label>
+<button class="btn" type="submit" data-he="💬 לשלוח הזמנה בוואטסאפ" data-ru="💬 Отправить заказ в WhatsApp">💬 לשלוח הזמנה בוואטסאפ</button>
+</form></section>
+
+<footer data-he="© המטבח של אולגה · 050-000-0000" data-ru="© Кухня Ольги · 050-000-0000">© המטבח של אולגה · 050-000-0000</footer>
+<a class="fab" href="https://wa.me/972500000000">💬</a>
+<script>
+let ru=false;function toggle(){ru=!ru;document.documentElement.lang=ru?'ru':'he';document.documentElement.dir=ru?'ltr':'rtl';document.querySelector('.lang').textContent=ru?'עב':'RU';document.querySelectorAll('[data-he]').forEach(e=>e.innerHTML=e.dataset[ru?'ru':'he'])}
+function send(e){e.preventDefault();const f=e.target;const t=ru?`Здравствуйте, Ольга! Хочу заказать ${f.qty.value} кг — ${f.dish.value}, на ${f.date.value||'ближайшее время'}. ${f.name.value}`:`שלום אולגה! רוצה להזמין ${f.qty.value} ק"ג ${f.dish.value}, לתאריך ${f.date.value||'הקרוב'}. ${f.name.value}`;open('https://wa.me/972500000000?text='+encodeURIComponent(t))}
+</script></body></html>

@@ -4,16 +4,18 @@
 :root{--bg:#fdf7ee;--bg2:#f6e8d2;--ink:#3b2a1e;--mut:#7a6455;--acc:#c2542d;--honey:#e9a83a;--wa:#25d366}
 *{box-sizing:border-box}body{margin:0;font-family:Heebo,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
 h1,h2,h3{font-family:"Frank Ruhl Libre",serif;margin:0}
-nav{display:flex;justify-content:space-between;align-items:center;padding:16px 6%;position:sticky;top:0;background:var(--bg);z-index:2}
-.logo{font-family:"Frank Ruhl Libre",serif;font-size:26px;font-weight:900;color:var(--acc)}
-.lang{border:1.5px solid var(--ink);background:none;padding:6px 14px;border-radius:99px;font:inherit;cursor:pointer}
+nav{display:flex;justify-content:space-between;align-items:center;padding:10px 6%;position:sticky;top:0;background:#fdf7eed9;backdrop-filter:blur(12px);border-bottom:1px solid #eadcc6;z-index:2}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.brand img{width:56px;height:56px;border-radius:50%;border:2px solid #fff;box-shadow:0 4px 14px #0003;transition:transform .3s}.brand:hover img{transform:rotate(-8deg) scale(1.06)}
+.brand b{font-family:"Frank Ruhl Libre",serif;font-size:24px;font-weight:900;color:var(--acc);display:block;line-height:1.1}.brand small{font-size:13px;color:var(--mut)}
+.lang{border:1.5px solid var(--acc);color:var(--acc);background:#fff;padding:6px 16px;border-radius:99px;font:inherit;font-weight:700;cursor:pointer}.lang:hover{background:var(--acc);color:#fff}
 .hero{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;padding:50px 6% 30px}
 .hero h1{font-size:54px;line-height:1.1;margin-bottom:14px}.hero .lead{font-size:20px;color:var(--mut);margin:0 0 26px}
 .btn{display:inline-block;padding:14px 26px;border-radius:99px;font-weight:700;text-decoration:none;color:#fff;background:var(--wa);margin-inline-end:10px;border:none;font:inherit;font-weight:700;cursor:pointer}
 .btn.call{background:var(--acc)}
-.img{aspect-ratio:4/5;border-radius:50% 50% 50% 8px;overflow:hidden;box-shadow:0 30px 60px -30px #0006;border:8px solid #fff}
+.img{width:100%;max-width:480px;margin:0 auto;filter:drop-shadow(0 24px 30px #0003)}
 .intro{margin:30px 6% 0;background:#fff;border-radius:24px;padding:36px 40px;display:grid;grid-template-columns:120px 1fr;gap:30px;align-items:center;box-shadow:0 14px 40px -24px #0005}
-.intro .face{width:120px;height:120px;border-radius:50%;overflow:hidden}.img img,.face img{width:100%;height:100%;object-fit:cover;display:block}.img img{object-position:50% 15%}.face img{object-position:50% 20%}
+.intro .face{width:120px;height:120px;border-radius:50%;overflow:hidden}.face img{width:100%;height:100%;object-fit:cover;display:block}.face img{object-position:50% 20%}
 .intro h2{font-size:30px;margin-bottom:8px}.intro p{margin:0;font-size:17px;color:var(--mut)}
 .intro .tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}.intro .tags span{background:var(--bg2);padding:5px 12px;border-radius:99px;font-size:14px;font-weight:500}
 .menu{padding:60px 6% 40px}.menu h2{font-size:40px;text-align:center;margin-bottom:6px}.menu .sub{text-align:center;color:var(--mut);margin:0 0 30px}
@@ -28,19 +30,20 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:16px 6
 .order label{font-weight:500;font-size:14px}
 .order select,.order input{width:100%;padding:12px 14px;border-radius:12px;border:1.5px solid #e0cfb5;background:#fff;font:inherit;margin-top:4px}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.dishes{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}.dishes label{display:flex;align-items:center;justify-content:space-between;gap:8px;background:#fff;border:1.5px solid #e0cfb5;border-radius:12px;padding:8px 12px;font-size:14px}.dishes label:has(input:not([value="0"]),input:focus){border-color:var(--acc)}.order .dishes input{width:64px;margin:0;padding:6px 8px;text-align:center}
 .note{font-size:13px;color:var(--mut);margin-top:6px}
 footer{padding:30px 6%;text-align:center;color:#8a7362;font-size:14px}
 .fab{position:fixed;bottom:22px;inset-inline-start:22px;width:60px;height:60px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;font-size:30px;box-shadow:0 10px 25px #0004;text-decoration:none}
-@media(max-width:800px){.hero,.order,.intro{grid-template-columns:1fr}.hero h1{font-size:38px}.order{padding:30px}}
+@media(max-width:800px){.brand small{display:none}.brand img{width:44px;height:44px}.hero,.order,.intro{grid-template-columns:1fr}.hero h1{font-size:38px}.order{padding:30px}}
 </style></head><body>
-<nav><div class="logo" data-he="המטבח של אולגה" data-ru="Кухня Ольги">המטבח של אולגה</div><button class="lang" onclick="toggle()">RU</button></nav>
+<nav><a class="brand" href="#"><img src="img/logo.png" alt=""><span><b data-he="המטבח של אולגה" data-ru="Кухня Ольги">המטבח של אולגה</b><small data-he="אוכל ביתי מכל הלב" data-ru="Домашняя еда от всего сердца">אוכל ביתי מכל הלב</small></span></a><button class="lang" onclick="toggle()">RU</button></nav>
 
 <section class="hero"><div>
 <h1 data-he="פלמני ביתיים,<br>כמו שסבתא הכינה" data-ru="Домашние пельмени,<br>как у бабушки">פלמני ביתיים,<br>כמו שסבתא הכינה</h1>
 <p class="lead" data-he="כיסונים בעבודת יד, מבצק דק ומילוי נדיב. מגיעים אליכם קפואים – עשר דקות במים רותחים וארוחה חמה על השולחן." data-ru="Пельмени ручной лепки — тонкое тесто, щедрая начинка. Приезжают замороженными: десять минут в кипятке — и горячий ужин на столе.">כיסונים בעבודת יד, מבצק דק ומילוי נדיב. מגיעים אליכם קפואים – עשר דקות במים רותחים וארוחה חמה על השולחן.</p>
 <a class="btn" href="#order" data-he="💬 להזמין עכשיו" data-ru="💬 Заказать сейчас">💬 להזמין עכשיו</a>
 <a class="btn call" href="#tel" data-he="📞 להתקשר" data-ru="📞 Позвонить">📞 להתקשר</a>
-</div><div class="img"><img src="img/olga.jpg" alt="אולגה סוגרת פלמני ביד"></div></section>
+</div><img class="img" src="img/logo.png" alt="המטבח של אולגה – אוכל ביתי מכל הלב"></section>
 
 <section class="intro"><div class="face"><img src="img/olga.jpg" alt=""></div><div>
 <h2 data-he="שלום, אני אולגה" data-ru="Здравствуйте, я Ольга">שלום, אני אולגה</h2>
@@ -63,19 +66,18 @@ footer{padding:30px 6%;text-align:center;color:#8a7362;font-size:14px}
 <p class="note" data-he="הכנה עד יומיים עסקים · איסוף עצמי בקריות / חיפה · תשלום במקום או בביט מראש" data-ru="Готовим до двух рабочих дней · Самовывоз, Крайот / Хайфа · Оплата на месте или заранее через Bit">הכנה עד יומיים עסקים · איסוף עצמי בקריות / חיפה · תשלום במקום או בביט מראש</p>
 </div>
 <form onsubmit="send(event)">
-<label><span data-he="מה להכין?" data-ru="Что приготовить?">מה להכין?</span><select name="dish">
-<option data-he="פלמני בשר" data-ru="Пельмени с мясом">פלמני בשר</option><option data-he="פלמני עוף" data-ru="Пельмени с курицей">פלמני עוף</option><option data-he="ורניקי תפוחי אדמה" data-ru="Вареники с картошкой">ורניקי תפוחי אדמה</option><option data-he="ורניקי גבינה" data-ru="Вареники с творогом">ורניקי גבינה</option><option data-he="ורניקי פטריות וכרוב" data-ru="Вареники с грибами">ורניקי פטריות וכרוב</option><option data-he="ורניקי דובדבנים" data-ru="Вареники с вишней">ורניקי דובדבנים</option></select></label>
-<div class="two"><label><span data-he="כמות (ק״ג)" data-ru="Количество (кг)">כמות (ק"ג)</span><input name="qty" type="number" min="1" value="2"></label>
-<label><span data-he="לאיזה תאריך?" data-ru="На какую дату?">לאיזה תאריך?</span><input name="date" type="date"></label></div>
-<label><span data-he="השם שלכם" data-ru="Ваше имя">השם שלכם</span><input name="name" required></label>
+<div><span data-he="מה להכין? (ק״ג לכל סוג)" data-ru="Что приготовить? (кг каждого)" style="font-weight:500;font-size:14px">מה להכין? (ק״ג לכל סוג)</span><div class="dishes"><label><span data-he="פלמני בשר" data-ru="Пельмени с мясом">פלמני בשר</span><input type="number" min="0" step="0.1" value="0" oninput="this.setAttribute('value',this.value)"></label><label><span data-he="פלמני עוף" data-ru="Пельмени с курицей">פלמני עוף</span><input type="number" min="0" step="0.1" value="0" oninput="this.setAttribute('value',this.value)"></label><label><span data-he="ורניקי תפוחי אדמה" data-ru="Вареники с картошкой">ורניקי תפוחי אדמה</span><input type="number" min="0" step="0.1" value="0" oninput="this.setAttribute('value',this.value)"></label><label><span data-he="ורניקי גבינה" data-ru="Вареники с творогом">ורניקי גבינה</span><input type="number" min="0" step="0.1" value="0" oninput="this.setAttribute('value',this.value)"></label><label><span data-he="ורניקי פטריות וכרוב" data-ru="Вареники с грибами">ורניקי פטריות וכרוב</span><input type="number" min="0" step="0.1" value="0" oninput="this.setAttribute('value',this.value)"></label><label><span data-he="ורניקי דובדבנים" data-ru="Вареники с вишней">ורניקי דובדבנים</span><input type="number" min="0" step="0.1" value="0" oninput="this.setAttribute('value',this.value)"></label></div></div>
+<div class="two"><label><span data-he="לאיזה תאריך?" data-ru="На какую дату?">לאיזה תאריך?</span><input name="date" type="date" required></label>
+<label><span data-he="השם שלכם" data-ru="Ваше имя">השם שלכם</span><input name="name" required></label></div>
 <button class="btn" type="submit" data-he="💬 לשלוח הזמנה בוואטסאפ" data-ru="💬 Отправить заказ в WhatsApp">💬 לשלוח הזמנה בוואטסאפ</button>
 </form></section>
 
-<footer data-he="© המטבח של אולגה · איסוף עצמי בקריות וחיפה · 052-698-1834" data-ru="© Кухня Ольги · Самовывоз, Крайот и Хайфа · 052-698-1834">© המטבח של אולגה · איסוף עצמי בקריות וחיפה · 052-698-1834</footer>
+<footer><span data-he="© המטבח של אולגה · איסוף עצמי בקריות וחיפה · 052-698-1834" data-ru="© Кухня Ольги · Самовывоз, Крайот и Хайфа · 052-698-1834">© המטבח של אולגה · איסוף עצמי בקריות וחיפה · 052-698-1834</span></footer>
 <a class="fab" href="#wa">💬</a>
 <script>
 const PHONE='972526981834'; // ponytail: single place for mom's number, intl format no +
 document.querySelectorAll('a[href="#wa"]').forEach(a=>a.href='https://wa.me/'+PHONE);document.querySelectorAll('a[href="#tel"]').forEach(a=>a.href='tel:+'+PHONE);
 let ru=false;function toggle(){ru=!ru;document.documentElement.lang=ru?'ru':'he';document.documentElement.dir=ru?'ltr':'rtl';document.querySelector('.lang').textContent=ru?'עב':'RU';document.querySelectorAll('[data-he]').forEach(e=>e.innerHTML=e.dataset[ru?'ru':'he'])}
-function send(e){e.preventDefault();const f=e.target;const t=ru?`Здравствуйте, Ольга! Хочу заказать ${f.qty.value} кг — ${f.dish.value}, на ${f.date.value||'ближайшее время'}. ${f.name.value}`:`שלום אולגה! רוצה להזמין ${f.qty.value} ק"ג ${f.dish.value}, לתאריך ${f.date.value||'הקרוב'}. ${f.name.value}`;open('https://wa.me/'+PHONE+'?text='+encodeURIComponent(t))}
+const d=new Date();d.setDate(d.getDate()+2);document.querySelector('[name=date]').min=d.toISOString().slice(0,10); // earliest pickup: day after tomorrow
+function send(e){e.preventDefault();const f=e.target;const items=[...f.querySelectorAll('.dishes label')].filter(l=>+l.querySelector('input').value>0).map(l=>`${l.querySelector('input').value} ${ru?'кг':'ק"ג'} ${l.querySelector('span').textContent}`);if(!items.length){alert(ru?'Выберите хотя бы одно блюдо':'בחרו לפחות סוג אחד');return}const t=ru?`Здравствуйте, Ольга! Хочу заказать:\n${items.join('\n')}\nна ${f.date.value}. ${f.name.value}`:`שלום אולגה! רוצה להזמין:\n${items.join('\n')}\nלתאריך ${f.date.value}. ${f.name.value}`;open('https://wa.me/'+PHONE+'?text='+encodeURIComponent(t))}
 </script></body></html>
